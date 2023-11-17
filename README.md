@@ -13,7 +13,8 @@ This application sample demnostrates how data can be pulled from Amazon Redshift
 
 * Start by following [this guide](https://docs.aws.amazon.com/redshift/latest/mgmt/serverless-console-first-time-setup.html) to create a new Redshift serverless instance
 * Use [Python Faker](https://faker.readthedocs.io/en/master/) to create synthetic data and insert it into your data warehouse instance OR
-* You can just insert the data manually by executing the following code block
+* You can just insert the data manually by executing the following code block. First create the table and grant your username access to the table.
+* Finally insert the data into the table.
 
 ```sql
 CREATE TABLE people (
@@ -22,9 +23,10 @@ CREATE TABLE people (
     last_name varchar(100) default 'General',
     occupation varchar(100) default 'General'
 );
-
 GRANT ALL PRIVILEGES ON TABLE people TO "IAM:your-iam-user-with-redshift-access";
+```
 
+```sql
 INSERT INTO people VALUES
 (1, 'Lee', 'Andrews', 'Engineer, electrical'),
 (2, 'Michael', 'Woods', 'Therapist, art'),
