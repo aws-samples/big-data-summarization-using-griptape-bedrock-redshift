@@ -6,7 +6,16 @@ This application sample demnostrates how data can be pulled from Amazon Redshift
 
 ## Installation and running instructions
 
-* Simply create a new python virtual environment and install the requirements by running `pip install -r requirements.txt`
+* Simply create a new python virtual environment and install the requirements by running `pip install -r requirements.txt`\
+* Create a `.env` file with relevant environment variables
+
+```shell
+REDSHIFT_WORKGROUP_NAME=humansorg
+REDSHIFT_DATABASE=dev
+AWS_REGION=us-west-2
+REDSHIFT_CREDENTIALS_SECRETS_MANAGER_ARN=<arn for the secrets manager redshift credentials>
+```
+  
 * Start the application by running `python summarize.py`
 
 ## Creating an Amazon Redshift instance and loading data
